@@ -7,6 +7,7 @@ license = "MIT OR Apache-2.0"
 readme = "README.md"
 description = "rocco is a [http://ashkenas.com/docco](http://ashkenas.com/docco) inspired literate programmming library in Rust"
 documentation = "https://docs.rs/rocco"
+homepage = "https://github.com/creativcoder/rocco"
 keywords = ["docs", "documentation", "literate", "docco","cargo-docco"]
 categories = ["cli", "documentation", "command-line-utilities"]
 repository = "https://github.com/creativcoder/rocco"
