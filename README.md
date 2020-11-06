@@ -1,6 +1,9 @@
 
 [![Build Status](https://github.com/creativcoder/cargo-docco/workflows/build/badge.svg)](https://github.com/creativcoder/cargo-docco/actions)
 [![crates.io](https://img.shields.io/crates/v/cargo-docco.svg)](https://crates.io/crates/cargo-docco)
+[![docs.rs](https://docs.rs/rocco/badge.svg)](https://docs.rs/rocco/)
+[![license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/creativcoder/avrow/blob/master/LICENSE-MIT)
+[![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/creativcoder/avrow/blob/master/LICENSE-APACHE)
 
 # Rocco
 
