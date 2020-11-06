@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <title>tests/samples/source.rs</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/prism.min.js"></script>
+        <!--Default light theme-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/themes/prism.min.css">
+        <!--Darcula dark theme-->
+        <!-- <link rel="stylesheet" href="https://unpkg.com/dracula-prism/css/dracula-prism.css"> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.8.4/components/prism-rust.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@master/devicon.min.css">
+    </head>
+
+    <body>
+        <nav>
+            <p>Made with <a href="https://github.com/creativcoder/rocco">rocco</a></p>
+        </nav>
+        <div id='container'>
+            <div id="background"></div>
+            
+            <div class='section'>
+                <div class='docs'>
+                    <i id="lang-icon" class="devicon-rust-plain colored">
+                        <span>
+                            <p class="filename"> ‣ tests/samples/source.rs</p>
+                        </span>
+                    </i>
+                </div>
+            </div>
+            <div class='clearall'>
+                
+                    <div class='section' id='section-0'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-0'>#</a>
+                            </div>
+                            <p>A literate program combines code and prose (documentation) in one file format.
+The following ascii diagram depicts how ascii generates this html.</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-1'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-1'>#</a>
+                            </div>
+                            <pre><code>   +-----------------------------------------+
+   | File containing the program description |
+   | peppered with scraps of program code.   |
+   | This is what the programmer works on.   |
+   |          (e.g. source.rs)               |
+   +-----------------------------------------+
+                      |
+                      v
+        o---------------------------o
+        |           Rocco           |
+        o---------------------------o
+                      |
+         +------------+-------------+
+         |                          |
+         v                          v
++------------------+   +--------------------------+
+|       Prose      |   |           Code           |
++------------------+   +--------------------------+
+</code></pre>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-2'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-2'>#</a>
+                            </div>
+                            <hr />
+<p>The source and prose below is rocco's output on its own source code.</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-3'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-3'>#</a>
+                            </div>
+                            <p><code>Language</code> represents various attributes of a language used to
+generate and parse code and prose.</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>#[derive(Debug, Content, serde::Serialize, serde::Deserialize)]
+pub struct Language {
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-4'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-4'>#</a>
+                            </div>
+                            <p>of language (e.g, python, rust, go)</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>    name: String,
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-5'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-5'>#</a>
+                            </div>
+                            <p>the delimiter which denotes a comment (//)</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>    comment: String,
+}
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-6'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-6'>#</a>
+                            </div>
+                            <p><code>LANGUAGES</code> represents a one time initialized json map of languages with their various attributes.</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>static LANGUAGES: Lazy&ltHashMap&lt&'static str, Language&gt&gt = Lazy::new(|| {
+    let lang_json = include_str!("assets/languages.json");
+    serde_json::from_str(lang_json.as_ref()).expect("Language map initialization failed")
+});
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-7'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-7'>#</a>
+                            </div>
+                            <p>A <code>Section</code> represents a parsed chunk of code and prose.</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>#[derive(Content, Debug)]
+pub struct Section {
+    num: usize,
+    docs_html: String,
+    code_html: String,
+}
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-8'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-8'>#</a>
+                            </div>
+                            <p>The <code>Docco</code> instance contains all items to successfully render a source code.</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>#[derive(Content)]
+pub struct Docco {
+    sections: Vec&ltSection&gt,
+    css: String,
+    html: String,
+    filename: String,
+    output: String,
+    extension: String,
+    language: String,
+    doc_symbol: String,
+}
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-9'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-9'>#</a>
+                            </div>
+                            
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>impl Docco {
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-10'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-10'>#</a>
+                            </div>
+                            <p>Creates a new Docco instance.</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>    pub fn new(source: &PathBuf, output: Option&ltPathBuf&gt) -&gt Result&ltSelf, Error&gt {
+        if !source.is_file() {
+            return Err(Error::DoccoInitFailed);
+        }
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-11'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-11'>#</a>
+                            </div>
+                            
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>        let source_str = source.as_path().display().to_string();
+        let output = if let Some(output) = output {
+            output.as_path().display().to_string()
+        } else {
+            let a = source_str.find('.').unwrap();
+            let slice = &source_str[..a];
+            format!("{}.html", slice)
+        };
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-12'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-12'>#</a>
+                            </div>
+                            
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>        let (language, comment, extension) = if let Some(ext) = source_str.split(".").last() {
+            let language = LANGUAGES
+                .get(ext)
+                .map(|l| l)
+                .ok_or(Error::UnsupportedExt(ext.to_string()))?;
+            (&language.name, &language.comment, ext.to_string())
+        } else {
+            return Err(Error::DoccoInitFailed);
+        };
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-13'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-13'>#</a>
+                            </div>
+                            
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>        Ok(Self {
+            sections: vec![],
+            filename: source_str,
+            css: include_str!("assets/template.css").to_string(),
+            html: include_str!("assets/template.html").to_string(),
+            output,
+            language: language.to_string(),
+            extension,
+            doc_symbol: comment.to_string(),
+        })
+    }
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-14'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-14'>#</a>
+                            </div>
+                            <p>Sets the output html file</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>    pub fn set_output(&mut self, output: &str) {
+        self.output = output.to_string();
+    }
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-15'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-15'>#</a>
+                            </div>
+                            <p>Renders the parsed sections to an html file.</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>    pub fn render(&self) -&gt Result&lt(), Error&gt {
+        let template =
+            Template::new(self.html.as_str()).map_err(|_| Error::InvalidTemplateSource)?;
+        let path = std::path::Path::new(&self.output);
+        let prefix = path.parent().unwrap();
+        std::fs::create_dir_all(prefix).unwrap();
+        template.render_to_file(&self.output, self)?;
+        Ok(())
+    }
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-16'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-16'>#</a>
+                            </div>
+                            <p>Parses code blocks</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>    fn parse_code(
+        &self,
+        iter: &mut Peekable&ltLines&ltBufReader&ltFile&gt&gt&gt,
+        code_buffer: &mut String,
+    ) -&gt Result&lt(), Error&gt {
+        while let Some(Ok(next_line)) = iter.peek() {
+            let line_trimmed = next_line.trim_start();
+            if !line_trimmed.starts_with(&self.doc_symbol) && !line_trimmed.is_empty() {
+                let next_line = next_line.replace("&lt", "&lt");
+                let next_line = next_line.replace("&gt", "&gt");
+                code_buffer.push_str(&next_line);
+                if !line_trimmed.ends_with("\n") {
+                    code_buffer.push_str("\n");
+                }
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-17'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-17'>#</a>
+                            </div>
+                            
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>                iter.next();
+            } else {
+                return Ok(());
+            }
+        }
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-18'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-18'>#</a>
+                            </div>
+                            
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>        Ok(())
+    }
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-19'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-19'>#</a>
+                            </div>
+                            <p>Parses documentation blocks</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>    fn parse_doc(
+        &self,
+        iter: &mut Peekable&ltLines&ltBufReader&ltFile&gt&gt&gt,
+        doc_buffer: &mut String,
+    ) -&gt Result&lt(), Error&gt {
+        while let Some(Ok(next_line)) = iter.peek() {
+            if next_line.trim().starts_with(&self.doc_symbol) {
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-20'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-20'>#</a>
+                            </div>
+                            <p>rust specific doc comments</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>                if next_line.trim().starts_with("///") {
+                    doc_buffer.push_str(next_line.trim_start());
+                    doc_buffer.push_str("\n");
+                } else {
+                    let next_line = next_line.trim_start().trim_start_matches(&self.doc_symbol);
+                    doc_buffer.push_str(next_line);
+                    doc_buffer.push_str("\n");
+                }
+                iter.next();
+            } else {
+                return Ok(());
+            }
+        }
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-21'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-21'>#</a>
+                            </div>
+                            
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>        Ok(())
+    }
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+                    <div class='section' id='section-22'>
+                        <div class='docs'>
+                            <div class='octowrap'>
+                                <a class='octothorpe' href='#section-22'>#</a>
+                            </div>
+                            <p>High level method that iterates over lines in the given source file
+and parses code and prose blocks as <code>Section</code>s. Additionally, processes the
+documentation through markdown.</p>
+
+                        </div>
+                        <div class="code">
+                            <pre data-start="8"><code class='language-rust'>    pub fn parse(&mut self) -&gt Result&lt(), Error&gt {
+        let fs = BufReader::new(OpenOptions::new().read(true).open(&self.filename)?);
+        let mut lines = fs.lines().peekable();
+        let mut idx = 0;
+        while let Some(Ok(next_line)) = lines.peek() {
+            if next_line.is_empty() {
+                lines.next();
+                continue;
+            }
+            let mut doc = String::new();
+            let mut code = String::new();
+            self.parse_doc(&mut lines, &mut doc)?;
+            self.parse_code(&mut lines, &mut code)?;
+            let docs_html = comrak::markdown_to_html(&doc, &comrak::ComrakOptions::default());
+            let section = Section {
+                num: idx,
+                docs_html,
+                code_html: code,
+            };
+            self.sections.push(section);
+            idx += 1;
+        }
+        Ok(())
+    }
+}
+
+                            </code></pre>
+                        </div>
+                    </div>
+                    <div class='clearall'></div>
+                
+            </div>
+
+            <style async>
+            /*--------------------- Layout and Typography ----------------------------*/
+
+html {
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #252519;
+  margin: 0; padding: 0;
+  background: #f5f5ff;
+}
+a {
+  color: #261a3b;
+}
+  a:visited {
+    color: #261a3b;
+  }
+p {
+  margin: 0 0 15px 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 40px 0 15px 0;
+}
+h2, h3, h4, h5, h6 {
+    margin-top: 0;
+  }
+#container {
+  background: white;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+ }
+#container, div.section {
+  position: relative;
+}
+#background {
+  position: absolute;
+  top: 0; left: 580px; right: 0; bottom: 0;
+  background: #f5f5ff;
+  border-left: 1px solid #e5e5ee;
+  z-index: 0;
+}
+#jump_to, #jump_page {
+  background: white;
+  -webkit-box-shadow: 0 0 25px #777; -moz-box-shadow: 0 0 25px #777;
+  -webkit-border-bottom-left-radius: 5px; -moz-border-radius-bottomleft: 5px;
+  font: 10px Arial;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: right;
+}
+#jump_to, #jump_wrapper {
+  position: fixed;
+  right: 0; top: 0;
+  padding: 5px 10px;
+}
+  #jump_wrapper {
+    padding: 0;
+    display: none;
+  }
+    #jump_to:hover #jump_wrapper {
+      display: block;
+    }
+    #jump_page {
+      padding: 5px 0 3px;
+      margin: 0 0 25px 25px;
+    }
+      #jump_page .source {
+        display: block;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-top: 1px solid #eee;
+      }
+        #jump_page .source:hover {
+          background: #f5f5ff;
+        }
+        #jump_page .source:first-child {
+        }
+div.docs {
+  float: left;
+  max-width: 500px;
+  min-width: 500px;
+  min-height: 5px;
+  padding: 0px 25px 1px 25px;
+  vertical-align: top;
+  text-align: left;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+  .docs pre {
+    margin: 15px 0 15px;
+    padding-left: 15px;
+    overflow-y: scroll;
+  }
+  .docs p tt, .docs p code {
+    background: #f8f8ff;
+    border: 1px solid #dedede;
+    font-size: 12px;
+    padding: 0 0.2em;
+  }
+  .octowrap {
+    position: relative;
+  }
+    .octothorpe {
+      font: 12px Arial;
+      text-decoration: none;
+      color: #454545;
+      position: absolute;
+      top: 3px; left: -20px;
+      padding: 1px 2px;
+      opacity: 0;
+      -webkit-transition: opacity 0.2s linear;
+    }
+      div.docs:hover .octothorpe {
+        opacity: 1;
+      }
+div.code {
+  margin-left: 580px;
+  padding: 14px 15px 0px 20px;
+  vertical-align: top;
+}
+  .code pre, .docs p code {
+    font-size: 15px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  }
+    pre, tt, code {
+      line-height: 18px;
+      margin: 0; padding: 0;
+    }
+div.clearall {
+    clear: both;
+}
+
+.filename {
+  font-size: large;
+  margin:0;
+}
+
+#lang-icon {
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  position:absolute;
+  top:0;
+  right:0;
+  z-index: 100;
+  margin-right: 5px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&amp;display=swap');
+
+/*---------------------- Syntax Highlighting -----------------------------*/
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+body .hll { background-color: #ffffcc }
+body .c { color: #408080; font-style: italic }  /* Comment */
+body .err { border: 1px solid #FF0000 }         /* Error */
+body .k { color: #954121 }                      /* Keyword */
+body .o { color: #666666 }                      /* Operator */
+body .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+body .cp { color: #BC7A00 }                     /* Comment.Preproc */
+body .c1 { color: #408080; font-style: italic } /* Comment.Single */
+body .cs { color: #408080; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 }                     /* Generic.Deleted */
+body .ge { font-style: italic }                 /* Generic.Emph */
+body .gr { color: #FF0000 }                     /* Generic.Error */
+body .gh { color: #000080; font-weight: bold }  /* Generic.Heading */
+body .gi { color: #00A000 }                     /* Generic.Inserted */
+body .go { color: #808080 }                     /* Generic.Output */
+body .gp { color: #000080; font-weight: bold }  /* Generic.Prompt */
+body .gs { font-weight: bold }                  /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold }  /* Generic.Subheading */
+body .gt { color: #0040D0 }                     /* Generic.Traceback */
+body .kc { color: #954121 }                     /* Keyword.Constant */
+body .kd { color: #954121; font-weight: bold }  /* Keyword.Declaration */
+body .kn { color: #954121; font-weight: bold }  /* Keyword.Namespace */
+body .kp { color: #954121 }                     /* Keyword.Pseudo */
+body .kr { color: #954121; font-weight: bold }  /* Keyword.Reserved */
+body .kt { color: #B00040 }                     /* Keyword.Type */
+body .m { color: #666666 }                      /* Literal.Number */
+body .s { color: #219161 }                      /* Literal.String */
+body .na { color: #7D9029 }                     /* Name.Attribute */
+body .nb { color: #954121 }                     /* Name.Builtin */
+body .nc { color: #0000FF; font-weight: bold }  /* Name.Class */
+body .no { color: #880000 }                     /* Name.Constant */
+body .nd { color: #AA22FF }                     /* Name.Decorator */
+body .ni { color: #999999; font-weight: bold }  /* Name.Entity */
+body .ne { color: #D2413A; font-weight: bold }  /* Name.Exception */
+body .nf { color: #0000FF }                     /* Name.Function */
+body .nl { color: #A0A000 }                     /* Name.Label */
+body .nn { color: #0000FF; font-weight: bold }  /* Name.Namespace */
+body .nt { color: #954121; font-weight: bold }  /* Name.Tag */
+body .nv { color: #19469D }                     /* Name.Variable */
+body .ow { color: #AA22FF; font-weight: bold }  /* Operator.Word */
+body .w { color: #bbbbbb }                      /* Text.Whitespace */
+body .mf { color: #666666 }                     /* Literal.Number.Float */
+body .mh { color: #666666 }                     /* Literal.Number.Hex */
+body .mi { color: #666666 }                     /* Literal.Number.Integer */
+body .mo { color: #666666 }                     /* Literal.Number.Oct */
+body .sb { color: #219161 }                     /* Literal.String.Backtick */
+body .sc { color: #219161 }                     /* Literal.String.Char */
+body .sd { color: #219161; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #219161 }                     /* Literal.String.Double */
+body .se { color: #BB6622; font-weight: bold }  /* Literal.String.Escape */
+body .sh { color: #219161 }                     /* Literal.String.Heredoc */
+body .si { color: #BB6688; font-weight: bold }  /* Literal.String.Interpol */
+body .sx { color: #954121 }                     /* Literal.String.Other */
+body .sr { color: #BB6688 }                     /* Literal.String.Regex */
+body .s1 { color: #219161 }                     /* Literal.String.Single */
+body .ss { color: #19469D }                     /* Literal.String.Symbol */
+body .bp { color: #954121 }                     /* Name.Builtin.Pseudo */
+body .vc { color: #19469D }                     /* Name.Variable.Class */
+body .vg { color: #19469D }                     /* Name.Variable.Global */
+body .vi { color: #19469D }                     /* Name.Variable.Instance */
+body .il { color: #666666 }                     /* Literal.Number.Integer.Long */
+            </style>
+    </body>
+
+</html>

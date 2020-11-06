@@ -1,0 +1,18 @@
+{
+    "go": {
+        "name": "go",
+        "comment": "//"
+    },
+    "py": {
+        "name": "python",
+        "comment": "#"
+    },
+    "rs": {
+        "name": "rust",
+        "comment": "//"
+    },
+    "rb": {
+        "name": "ruby",
+        "comment": "#"
+    }
+}
