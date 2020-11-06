@@ -1,6 +1,6 @@
 
-[![Build Status](https://github.com/creativcoder/cargo-docco/workflows/build/badge.svg)](https://github.com/creativcoder/cargo-docco/actions)
-[![crates.io](https://img.shields.io/crates/v/cargo-docco.svg)](https://crates.io/crates/cargo-docco)
+[![Build Status](https://github.com/creativcoder/rocco/workflows/build/badge.svg)](https://github.com/creativcoder/rocco/actions)
+[![crates.io](https://img.shields.io/crates/v/rocco.svg)](https://crates.io/crates/rocco)
 [![docs.rs](https://docs.rs/rocco/badge.svg)](https://docs.rs/rocco/)
 [![license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/creativcoder/avrow/blob/master/LICENSE-MIT)
 [![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/creativcoder/avrow/blob/master/LICENSE-APACHE)
@@ -12,9 +12,13 @@ Rocco (library) is a Rust port of Jash Kenas' [docco](https://github.com/jashken
 ## Overview
 
 Rocco is primarily in use by [cargo-docco](https://github.com/creativcoder/cargo-docco).
-It provides APIs to generate documentation from literate source files. (see [`languages.json`](src/assets/languages.json) for supported languages). Feel free to submit PRs to support more languages.
+It provides APIs to generate documentation from literate source files.
 
 Literate programming style docs are supported only as line comments. Block comments are usually not supported (for keeping implementation concise and simple), as in the [original](http://ashkenas.com/docco) implementation.
+
+## Supported languages
+
+See [`languages.json`](src/assets/languages.json) for supported languages. Feel free to submit PRs to support more languages.
 
 ## Support
 
