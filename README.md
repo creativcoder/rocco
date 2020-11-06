@@ -1,5 +1,5 @@
 
-[![Build Status](https://github.com/creativcoder/rocco/workflows/build/badge.svg)](https://github.com/creativcoder/rocco/actions)
+[![Actions Status](https://github.com/creativcoder/rocco/workflows/ci/badge.svg)](https://github.com/creativcoder/rocco/actions)
 [![crates.io](https://img.shields.io/crates/v/rocco.svg)](https://crates.io/crates/rocco)
 [![docs.rs](https://docs.rs/rocco/badge.svg)](https://docs.rs/rocco/)
 [![license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/creativcoder/avrow/blob/master/LICENSE-MIT)

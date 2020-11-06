@@ -4,7 +4,7 @@
 //! and code is passed through prism.js syntax highlighting.
 //!
 //! Rocco has a simple API:
-//!```rust
+//!```no_run
 //! use rocco::Docco;
 //! use std::path::PathBuf;
 //!
