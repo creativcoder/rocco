@@ -37,7 +37,7 @@ pub struct Language {
 
 static LANGUAGES: Lazy<HashMap<&'static str, Language>> = Lazy::new(|| {
     let lang_json = include_str!("assets/languages.json");
-    serde_json::from_str(lang_json.as_ref()).expect("Language map initialization failed")
+    serde_json::from_str(lang_json).expect("Language map initialization failed")
 });
 
 #[derive(Content, Debug)]
@@ -92,8 +92,7 @@ impl Docco {
         let (lang, cmnt, extn) = if let Some(ext) = source.extension().and_then(|s| s.to_str()) {
             let lang = LANGUAGES
                 .get(ext)
-                .map(|l| l)
-                .ok_or(Error::UnsupportedExt(ext.to_string()))?;
+                .ok_or_else(|| Error::UnsupportedExt(ext.to_string()))?;
             (&lang.name, &lang.comment, ext.to_string())
         } else {
             return Err(Error::InvalidSourceFile);
@@ -132,7 +131,7 @@ impl Docco {
                 let next_line = next_line.replace("<", "&lt");
                 let next_line = next_line.replace(">", "&gt");
                 code_buffer.push_str(&next_line);
-                if !line_trimmed.ends_with("\n") {
+                if !line_trimmed.ends_with('\n') {
                     code_buffer.push_str("\n");
                 }
 
