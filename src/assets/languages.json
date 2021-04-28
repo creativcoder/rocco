@@ -14,5 +14,9 @@
     "rb": {
         "name": "ruby",
         "comment": "#"
+    },
+    "cs" {
+        "name": "csharp",
+        "comment": "//"
     }
 }
