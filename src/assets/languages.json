@@ -1,18 +1,22 @@
 {
-    "go": {
-        "name": "go",
-        "comment": "//"
-    },
-    "py": {
-        "name": "python",
-        "comment": "#"
-    },
-    "rs": {
-        "name": "rust",
-        "comment": "//"
-    },
-    "rb": {
-        "name": "ruby",
-        "comment": "#"
-    }
+  "go": {
+    "name": "go",
+    "comment": "//"
+  },
+  "py": {
+    "name": "python",
+    "comment": "#"
+  },
+  "rs": {
+    "name": "rust",
+    "comment": "//"
+  },
+  "rb": {
+    "name": "ruby",
+    "comment": "#"
+  },
+  "cs": {
+    "name": "csharp",
+    "comment": "//"
+  }
 }
